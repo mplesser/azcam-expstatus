@@ -117,8 +117,6 @@ class Ui_ExposureStatus(object):
         self.label_integrating.setText(
             QCoreApplication.translate("ExposureStatus", u"Exposing", None)
         )
-        self.label_reading.setText(
-            QCoreApplication.translate("ExposureStatus", u"Reading", None)
-        )
+        self.label_reading.setText(QCoreApplication.translate("ExposureStatus", u"Reading", None))
 
     # retranslateUi
