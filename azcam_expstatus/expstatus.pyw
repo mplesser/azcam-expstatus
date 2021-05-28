@@ -46,7 +46,7 @@ class ExposureStatus(QMainWindow):
         """
 
         # set status text
-        status = azcam.api.exposure.get_par("exposureflag")
+        status = azcam.api.params.get_par("exposureflag")
 
         for key in self.flags:
             if self.flags[key] == status:
