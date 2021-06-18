@@ -6,6 +6,7 @@ from PySide2.QtWidgets import QMainWindow, QApplication
 
 import azcam
 import azcam.console
+import azcam.console_tools
 from azcam_expstatus.expstatus_ui import Ui_ExposureStatus
 
 
@@ -46,7 +47,7 @@ class ExposureStatus(QMainWindow):
         """
 
         # set status text
-        status = azcam.api.params.get_par("exposureflag")
+        status = azcam.db.params.get_par("exposureflag")
 
         for key in self.flags:
             if self.flags[key] == status:
@@ -116,7 +117,9 @@ if __name__ == "__main__":
             qtapp = QApplication(sys.argv)
         azcam.db.qtapp = qtapp
 
-    connected = azcam.api.server.connect(port=port)  # default host and port
+    azcam.console_tools.load()
+    server = azcam.get_tools("server")
+    connected = server.connect(port=port)  # default host and port
     if connected:
         print("Connected to azcamserver")
     else:
