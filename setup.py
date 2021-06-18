@@ -14,6 +14,6 @@ setup(
     keywords="ccd imaging astronomy observation observatory",
     packages=find_packages(),
     zip_safe=False,
-    url="https://mplesser.github.io/azcam/",
+    url="https://mplesser.github.io/azcam-expstatus/",
     install_requires=["azcam", "PySide2"],
 )
