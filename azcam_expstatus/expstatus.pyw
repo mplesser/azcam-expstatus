@@ -6,7 +6,6 @@ from PySide2.QtWidgets import QMainWindow, QApplication
 
 import azcam
 import azcam.console
-import azcam.console_tools
 from azcam_expstatus.expstatus_ui import Ui_ExposureStatus
 
 
@@ -117,7 +116,7 @@ if __name__ == "__main__":
             qtapp = QApplication(sys.argv)
         azcam.db.qtapp = qtapp
 
-    azcam.console_tools.load()
+    azcam.tools.load_console_tools()
     server = azcam.get_tools("server")
     connected = server.connect(port=port)  # default host and port
     if connected:
