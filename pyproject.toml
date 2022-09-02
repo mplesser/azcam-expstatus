@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "azcam-expstatus"
+version = "22.2"
+description = "Azcam extension for displaying exposure progress in a Qt window"
+authors = ["Michael Lesser <mlesser@arizona.edu>"]
+license = "LICENSE"
+readme = "README.md"
+keywords=["ccd", "imaging", "astronomy", "sensors"]
+repository = "https://github.com/mplesser/azcam-expstatus/"
+documentation = "https://mplesser.github.io/azcam/"
+
+[tool.poetry.dependencies]
+python = "^3.9,<3.11"
+PySide2 = "^5.15.2"
+azcam = { git = "https://github.com/mplesser/azcam.git", branch = "main" }
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
