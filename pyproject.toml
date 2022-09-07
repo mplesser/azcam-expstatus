@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "azcam-expstatus"
-version = "22.2"
+version = "22.3"
 description = "Azcam extension for displaying exposure progress in a Qt window"
 authors = ["Michael Lesser <mlesser@arizona.edu>"]
 license = "LICENSE"
