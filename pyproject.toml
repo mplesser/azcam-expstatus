@@ -1,21 +1,20 @@
-[tool.poetry]
+[project]
 name = "azcam-expstatus"
-version = "22.3"
+version = "22.3.1"
 description = "Azcam extension for displaying exposure progress in a Qt window"
-authors = ["Michael Lesser <mlesser@arizona.edu>"]
-license = "LICENSE"
+license = {file ="LICENSE"}
 readme = "README.md"
 keywords=["ccd", "imaging", "astronomy", "sensors"]
-repository = "https://github.com/mplesser/azcam-expstatus/"
-documentation = "https://mplesser.github.io/azcam/"
+authors = [{name="Michael Lesser"},{email = "mlesser@arizona.edu"}]
+dependencies = [
+    "azcam",
+    "PySide2",
+]
 
-[tool.poetry.dependencies]
-python = "^3.9,<3.11"
-PySide2 = "^5.15.2"
-azcam = "*"
-
-[tool.poetry.dev-dependencies]
+[project.urls]
+Documentation = "https://mplesser.github.io/azcam/"
+Repository = "https://github.com/mplesser/azcam-expstatus/"
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
