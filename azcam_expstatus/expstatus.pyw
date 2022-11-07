@@ -1,8 +1,8 @@
 import sys
 import time
 
-from PySide2 import QtCore
-from PySide2.QtWidgets import QMainWindow, QApplication
+from PySide6 import QtCore
+from PySide6.QtWidgets import QMainWindow, QApplication
 
 import azcam
 import azcam.console

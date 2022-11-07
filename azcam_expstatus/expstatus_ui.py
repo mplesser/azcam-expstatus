@@ -3,41 +3,20 @@
 ################################################################################
 ## Form generated from reading UI file 'expstatus.ui'
 ##
-## Created by: Qt User Interface Compiler version 5.15.0
+## Created by: Qt User Interface Compiler version 6.4.0
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
 
-from PySide2.QtCore import (
-    QCoreApplication,
-    QDate,
-    QDateTime,
-    QMetaObject,
-    QObject,
-    QPoint,
-    QRect,
-    QSize,
-    Qt,
-    QTime,
-    QUrl,
-)
-from PySide2.QtGui import (
-    QBrush,
-    QColor,
-    QConicalGradient,
-    QCursor,
-    QFont,
-    QFontDatabase,
-    QIcon,
-    QKeySequence,
-    QLinearGradient,
-    QPainter,
-    QPalette,
-    QPixmap,
-    QRadialGradient,
-)
-from PySide2.QtWidgets import *
-
+from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
+    QMetaObject, QObject, QPoint, QRect,
+    QSize, QTime, QUrl, Qt)
+from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
+    QFont, QFontDatabase, QGradient, QIcon,
+    QImage, QKeySequence, QLinearGradient, QPainter,
+    QPalette, QPixmap, QRadialGradient, QTransform)
+from PySide6.QtWidgets import (QApplication, QFrame, QGridLayout, QLabel,
+    QMainWindow, QSizePolicy, QSplitter, QWidget)
 
 class Ui_ExposureStatus(object):
     def setupUi(self, ExposureStatus):
@@ -59,7 +38,6 @@ class Ui_ExposureStatus(object):
         font1 = QFont()
         font1.setPointSize(12)
         font1.setBold(True)
-        font1.setWeight(75)
         self.label_status.setFont(font1)
         self.label_status.setFrameShape(QFrame.StyledPanel)
         self.label_status.setFrameShadow(QFrame.Sunken)
@@ -75,7 +53,6 @@ class Ui_ExposureStatus(object):
         font2 = QFont()
         font2.setPointSize(12)
         font2.setBold(False)
-        font2.setWeight(50)
         self.label_integrating.setFont(font2)
         self.label_integrating.setFrameShape(QFrame.StyledPanel)
         self.label_integrating.setFrameShadow(QFrame.Sunken)
@@ -98,27 +75,18 @@ class Ui_ExposureStatus(object):
         self.retranslateUi(ExposureStatus)
 
         QMetaObject.connectSlotsByName(ExposureStatus)
-
     # setupUi
 
     def retranslateUi(self, ExposureStatus):
-        ExposureStatus.setWindowTitle(
-            QCoreApplication.translate("ExposureStatus", u"ExpStatus", None)
-        )
-        # if QT_CONFIG(tooltip)
-        ExposureStatus.setToolTip(
-            QCoreApplication.translate("ExposureStatus", u"azcam exposure status", None)
-        )
-        # endif // QT_CONFIG(tooltip)
-        # if QT_CONFIG(whatsthis)
+        ExposureStatus.setWindowTitle(QCoreApplication.translate("ExposureStatus", u"ExpStatus", None))
+#if QT_CONFIG(tooltip)
+        ExposureStatus.setToolTip(QCoreApplication.translate("ExposureStatus", u"azcam exposure status", None))
+#endif // QT_CONFIG(tooltip)
+#if QT_CONFIG(whatsthis)
         ExposureStatus.setWhatsThis("")
-        # endif // QT_CONFIG(whatsthis)
+#endif // QT_CONFIG(whatsthis)
         self.label_status.setText("")
-        self.label_integrating.setText(
-            QCoreApplication.translate("ExposureStatus", u"Exposing", None)
-        )
-        self.label_reading.setText(
-            QCoreApplication.translate("ExposureStatus", u"Reading", None)
-        )
-
+        self.label_integrating.setText(QCoreApplication.translate("ExposureStatus", u"Exposing", None))
+        self.label_reading.setText(QCoreApplication.translate("ExposureStatus", u"Reading", None))
     # retranslateUi
+

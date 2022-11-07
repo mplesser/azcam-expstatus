@@ -8,7 +8,7 @@ keywords=["ccd", "imaging", "astronomy", "sensors"]
 authors = [{name="Michael Lesser"},{email = "mlesser@arizona.edu"}]
 dependencies = [
     "azcam",
-    "PySide2",
+    "PySide6",
 ]
 
 [project.urls]

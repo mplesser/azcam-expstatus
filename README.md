@@ -1,6 +1,6 @@
 # azcam-expstatus
 
-*azcam-expstatus* is an *azcam* extension for displaying exposure status in a Qt (PySide2) window.
+*azcam-expstatus* is an *azcam* extension for displaying exposure status in a Qt (PySide6) window.
 
 ## Installation
 
