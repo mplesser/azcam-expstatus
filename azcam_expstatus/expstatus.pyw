@@ -80,7 +80,7 @@ class ExposureStatus(QMainWindow):
 
         return
 
-    def start(self):
+    def create(self):
 
         # create
         if getattr(azcam.db, "qtapp", None) is None:
@@ -94,10 +94,11 @@ class ExposureStatus(QMainWindow):
 
         return
 
-
-# execute when run directly
-if __name__ == "__main__":
-
+def start():
+    """
+    Command to start expstatus GUI.
+    """
+    
     # ****************************************************************
     # parse command line arguments
     # ****************************************************************
@@ -129,10 +130,11 @@ if __name__ == "__main__":
         raise azcam.AzcamError("Could not connect to azcamserver")
 
     gui = ExposureStatus()
-    gui.start()
+    gui.create()
 
-    # if not running in IPython, wait...
-    try:
-        get_ipython()
-    except Exception as m:
-        qtapp.exec_()
+    qtapp.exec()
+
+# execute when run directly
+if __name__ == "__main__":
+    start()
+
