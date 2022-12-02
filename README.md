@@ -11,6 +11,7 @@ Or download from github: https://github.com/mplesser/azcam-expstatus.git.
 ## Usage:
 
 There are two command line options to specify the connection to **azcamserver**.
+
 -host *hostname* (default "localhost")
 -port *portnumber* (default 2402)
 
