@@ -1,6 +1,6 @@
 # azcam-expstatus
 
-*azcam-expstatus* is an *azcam* application which displays exposure status in a GUI window. the GUI is built with Qt using PySide6.
+*azcam-expstatus* is an *azcam* application which displays exposure status in a GUI window. The GUI is built with Qt using PySide6.
 
 ## Installation
 
@@ -12,6 +12,6 @@ Or download from github: https://github.com/mplesser/azcam-expstatus.git.
 
 There are two command line options to specify the connection to **azcamserver**.
 
-  -host *hostname* (default "localhost")
-  -port *portnumber* (default 2402)
+ -host *hostname* (default "localhost")
+ -port *portnumber* (default 2402)
 
