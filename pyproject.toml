@@ -1,7 +1,7 @@
 [project]
 name = "azcam-expstatus"
 version = "22.4.0"
-description = "Azcam extension for displaying exposure progress in a Qt window"
+description = "An Azcam application which displays exposure progress in a GUI window"
 license = {file ="LICENSE"}
 readme = "README.md"
 keywords=["ccd", "imaging", "astronomy", "sensors"]

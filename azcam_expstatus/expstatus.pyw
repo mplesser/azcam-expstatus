@@ -103,6 +103,11 @@ def start():
     # parse command line arguments
     # ****************************************************************
     try:
+        i = sys.argv.index("-host")
+        host = sys.argv[i + 1]
+    except ValueError:
+        host = "localhost"
+    try:
         i = sys.argv.index("-port")
         port = int(sys.argv[i + 1])
     except ValueError:
@@ -121,7 +126,7 @@ def start():
     azcam.tools.create_console_tools()
     # azcam.tools.load_console_tools()
     server = azcam.db.tools["server"]
-    connected = server.connect(port=port)  # default host and port
+    connected = server.connect(host=host, port=port)  # default host and port
     if connected:
         print("Connected to azcamserver")
     else:
