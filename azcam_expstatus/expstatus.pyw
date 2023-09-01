@@ -5,7 +5,8 @@ from PySide6 import QtCore
 from PySide6.QtWidgets import QMainWindow, QApplication
 
 import azcam
-import azcam.console
+import azcam_console
+from azcam_console.tools import create_console_tools
 from azcam_expstatus.expstatus_ui import Ui_ExposureStatus
 
 
@@ -28,7 +29,9 @@ class ExposureStatus(QMainWindow):
         self.timerID = self.ctimer = QtCore.QTimer()
 
         # connect timer
-        QtCore.QObject.connect(self.ctimer, QtCore.SIGNAL("timeout()"), self.timer_update)
+        QtCore.QObject.connect(
+            self.ctimer, QtCore.SIGNAL("timeout()"), self.timer_update
+        )
 
         # start timer
         self.ctimer.start(self.update_interval)
@@ -61,18 +64,24 @@ class ExposureStatus(QMainWindow):
                     self.ui.label_status.setText(key)
                     # set indicator colors
                     if key == "EXPOSING":
-                        self.ui.label_integrating.setStyleSheet("background-color: green;")
+                        self.ui.label_integrating.setStyleSheet(
+                            "background-color: green;"
+                        )
                         self.ui.label_reading.setStyleSheet("background-color: none;")
                         self.ui.label_integrating.setText("Exposing")
                         self.ui.label_reading.setText("")
                     elif key == "READOUT":
                         self.ui.label_reading.setStyleSheet("background-color: red;")
-                        self.ui.label_integrating.setStyleSheet("background-color: none;")
+                        self.ui.label_integrating.setStyleSheet(
+                            "background-color: none;"
+                        )
                         self.ui.label_reading.setText("Reading")
                         self.ui.label_integrating.setText("")
                     else:
                         self.ui.label_reading.setStyleSheet("background-color: none;")
-                        self.ui.label_integrating.setStyleSheet("background-color: none;")
+                        self.ui.label_integrating.setStyleSheet(
+                            "background-color: none;"
+                        )
                         self.ui.label_integrating.setText("")
                         self.ui.label_reading.setText("")
 
@@ -81,7 +90,6 @@ class ExposureStatus(QMainWindow):
         return
 
     def create(self):
-
         # create
         if getattr(azcam.db, "qtapp", None) is None:
             azcam.db.qtapp = QApplication(["ExpStatus"])
@@ -94,11 +102,12 @@ class ExposureStatus(QMainWindow):
 
         return
 
+
 def start():
     """
     Command to start expstatus GUI.
     """
-    
+
     # ****************************************************************
     # parse command line arguments
     # ****************************************************************
@@ -123,8 +132,7 @@ def start():
         azcam.db.qtapp = qtapp
 
     # console tools
-    azcam.tools.create_console_tools()
-    # azcam.tools.load_console_tools()
+    create_console_tools()
     server = azcam.db.tools["server"]
     connected = server.connect(host=host, port=port)  # default host and port
     if connected:
@@ -139,7 +147,7 @@ def start():
 
     qtapp.exec()
 
+
 # execute when run directly
 if __name__ == "__main__":
     start()
-
