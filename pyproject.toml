@@ -9,7 +9,7 @@ authors = [{ name = "Michael Lesser" }, { email = "mlesser@arizona.edu" }]
 dependencies = ["azcam", "PySide6"]
 
 [project.urls]
-Documentation = "https://mplesser.github.io/azcam/"
+Documentation = "https://azcam.readthedocs.io/"
 Repository = "https://github.com/mplesser/azcam-expstatus/"
 
 [build-system]
