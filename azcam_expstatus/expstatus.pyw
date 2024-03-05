@@ -5,8 +5,8 @@ from PySide6 import QtCore
 from PySide6.QtWidgets import QMainWindow, QApplication
 
 import azcam
-import azcam_console
-from azcam_console.tools import create_console_tools
+import azcam.console
+from azcam.console.tools import create_console_tools
 from azcam_expstatus.expstatus_ui import Ui_ExposureStatus
 
 
