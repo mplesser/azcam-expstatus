@@ -140,7 +140,7 @@ def start():
     else:
         print("Not connected to azcamserver")
         time.sleep(2)
-        raise azcam.AzcamError("Could not connect to azcamserver")
+        raise azcam.exceptions.AzcamError("Could not connect to azcamserver")
 
     gui = ExposureStatus()
     gui.create()
