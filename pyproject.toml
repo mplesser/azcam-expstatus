@@ -1,12 +1,12 @@
 [project]
 name = "azcam-expstatus"
-version = "24.0"
+version = "24.1"
 description = "An Azcam application which displays exposure progress in a GUI window"
 license = { file = "LICENSE" }
 readme = "README.md"
 keywords = ["ccd", "imaging", "astronomy", "sensors"]
 authors = [{ name = "Michael Lesser" }, { email = "mlesser@arizona.edu" }]
-dependencies = ["azcam", "PySide6"]
+dependencies = ["azcam", "azcam_console", "PySide6"]
 
 [project.urls]
 Documentation = "https://azcam.readthedocs.io/"
@@ -18,3 +18,6 @@ build-backend = "flit_core.buildapi"
 
 [tool.flit.module]
 name = "azcam_expstatus"
+
+[project.scripts]
+azcamobserve = "azcam_console.observe.__main__:main"
