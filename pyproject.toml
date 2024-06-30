@@ -1,6 +1,6 @@
 [project]
 name = "azcam-expstatus"
-version = "24.0"
+version = "24.1"
 description = "An Azcam application which displays exposure progress in a GUI window"
 license = { file = "LICENSE" }
 readme = "README.md"
