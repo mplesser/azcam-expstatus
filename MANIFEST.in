@@ -1,0 +1,3 @@
+include azcam_expstatus/expstatus.pyw
+include azcam_expstatus/expstatus.ui
+include azcam_expstatus/make_gui.bat
