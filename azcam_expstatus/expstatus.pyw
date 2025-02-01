@@ -10,8 +10,9 @@ from PySide6 import QtCore
 from PySide6.QtWidgets import QMainWindow, QApplication
 
 import azcam
+import azcam.exceptions
 import azcam_console
-from azcam_console.tools import create_console_tools
+from azcam_console.tools.console_tools import create_console_tools
 from azcam_expstatus.expstatus_ui import Ui_ExposureStatus
 
 
@@ -138,8 +139,7 @@ def start():
 
     # console tools
     create_console_tools()
-    server = azcam.db.tools["server"]
-    connected = server.connect(host=host, port=port)  # default host and port
+    connected = azcam.db.server.connect(host=host, port=port)  # default host and port
     if connected:
         print("Connected to azcamserver")
     else:
